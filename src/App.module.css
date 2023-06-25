@@ -1,0 +1,339 @@
+@import url("https://fonts.googleapis.com/css2?family=Arimo:wght@700&family=Inconsolata:wght@800&family=Inter:wght@200;300;400;500;700;800&family=Montserrat:wght@700&family=Poppins&family=Roboto:wght@700&display=swap");
+* {
+  box-sizing: border-box;
+  font-family: "poppins";
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+body,
+html {
+  height: 100vh;
+  width: 100vw;
+  background-color: #181824;
+  transition: 0.5s;
+  overflow-x: hidden !important;
+  position: relative;
+}
+body::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+#root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.topImage {
+  width: 100%;
+  height: 15rem;
+  background-image: url("./assets/bg-mobile-dark.jpg");
+  background-size: cover;
+  transition: 0.5s;
+}
+
+.mainCont {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4rem;
+  row-gap: 1rem;
+}
+.middle {
+  width: 32rem;
+  height: 4rem;
+  border-radius: 0.5rem;
+  background-color: #25273c;
+  color: #b0b2c9;
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+  column-gap: 1rem;
+  margin-bottom: 2rem;
+  transition: 0.5s ease-in-out;
+}
+.middle.light {
+  color: #13141e;
+  background-color: #ffffff;
+}
+
+.top {
+  width: 32rem;
+  margin-top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0;
+}
+.logo {
+  /* font-family: "Poppins"; */
+  font-style: normal;
+  font-weight: 700;
+  font-size: 3rem;
+  letter-spacing: 0.5rem;
+  color: white;
+  padding: 0;
+  margin: 0;
+}
+.mode {
+  height: 2rem;
+  width: 2rem;
+  transition: 1s;
+  cursor: pointer;
+  background-image: url("./assets/icon-sun.svg");
+  background-size: cover;
+}
+
+.tick {
+  width: 1.2rem;
+  height: 1.2rem;
+  transition: 0.5s;
+  border-radius: 50%;
+  border: 0.1rem solid #a674f122;
+  cursor: pointer;
+}
+
+.check {
+  transition: 0.5s;
+  /* color: transparent; */
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: linear-gradient(317.76deg, #a674f1 14.45%, #4b90db 66.86%);
+}
+.check:hover {
+  border: 0.1rem solid #a674f1;
+}
+
+.check::before {
+  content: "✓";
+  /* color: transparent; */
+  color: white;
+  font-size: 0.05 !important;
+  position: absolute;
+}
+.check.checked {
+  background: linear-gradient(317.76deg, #a674f1 14.45%, #4b90db 66.86%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: bolder;
+  color: white;
+}
+.check.checked::before {
+  color: white;
+}
+.addToDO {
+  height: 3rem;
+  min-width: 5rem;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  caret-color: #4b90db;
+  font-family: "Inter";
+  color: #b0b2c9;
+  font-style: normal;
+  font-size: 1.5rem;
+  padding-left: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+.addToDO::placeholder {
+  margin-left: 00.5rem;
+  font-size: 1.5rem;
+  display: flex;
+  align-self: center;
+}
+.bottom {
+  width: 32.5rem;
+  border-radius: 0.5rem;
+  background-color: #25273c;
+  padding: 0;
+  filter: drop-shadow(0 0 0.75rem rgb(0, 0, 0));
+  transition: 0.5s ease-in-out;
+  overflow: hidden;
+}
+.in {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  font-family: "Inter";
+  color: #b0b2c9;
+  font-style: normal;
+  font-size: 1.2rem;
+  column-gap: 1rem;
+}
+.bottom.light {
+  color: #181926;
+  background-color: #ffffff;
+  filter: drop-shadow(0 0 0.75rem rgb(179, 179, 179));
+}
+.todo {
+  margin: 0;
+}
+.close {
+  width: 100%;
+  display: flex;
+  justify-self: flex-end;
+}
+.mainClose {
+  cursor: pointer;
+  color: #494c6b;
+  transition: 0.5s;
+}
+.mainClose:hover {
+  color: aliceblue;
+}
+.out {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  /* margin-top: 1rem; */
+  height: 4rem;
+  border-bottom: #b0b2c9 solid 0.005rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.closed {
+  display: none;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  column-gap: 1rem;
+}
+.lowB {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-family: "Inter";
+  color: #b0b2c9;
+  font-style: normal;
+  font-size: 0.8rem;
+  height: 3rem;
+}
+.last {
+  width: 32rem;
+  padding-right: 1rem;
+  display: flex;
+  justify-content: center;
+  font-family: "Inter";
+  color: #b0b2c9;
+  font-style: normal;
+  font-size: 0.8rem;
+  margin-top: 0;
+}
+.low,
+li {
+  cursor: pointer;
+  transition: 0.5s;
+}
+.low.lows {
+  color: #4b90db;
+}
+li.lis {
+  background-color: #4b90db;
+}
+.low:hover {
+  color: white;
+}
+/* li:hover {
+  color: white;
+} */
+.ticked {
+  margin: 0;
+  padding: 0;
+  font-size: 0.2;
+  display: contents;
+}
+.check.checked {
+  background: linear-gradient(317.76deg, #a674f1 14.45%, #4b90db 66.86%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: bolder;
+  color: white;
+}
+/* .check:checked {
+  background: linear-gradient(317.76deg, #a674f1 14.45%, #4b90db 66.86%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: bolder;
+  color: white;
+} */
+
+.ticked.✅ {
+  display: contents;
+}
+.topB {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.adds {
+  width: 2rem;
+  height: 2rem;
+  color: white;
+  font-weight: bolder;
+  font-size: 80%;
+  border-radius: 5%;
+  background-image: linear-gradient(
+    to right,
+    rgb(153, 0, 255),
+    rgb(128, 0, 94)
+  );
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 2%;
+  top: 50%;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+}
+.adds:hover {
+  background-image: linear-gradient(
+    to right,
+    rgb(195, 115, 248),
+    rgb(244, 140, 216)
+  );
+  color: #181824;
+}
+.lists {
+  list-style: none;
+}
+@media screen and (max-width: 800px) {
+  .top,
+  .middle,
+  .bottom {
+    width: 80%;
+  }
+  .addToDO {
+    font-size: 1rem;
+  }
+  .addToDO::placeholder {
+    font-size: 1rem;
+  }
+  .in {
+    font-size: 1rem;
+  }
+}
